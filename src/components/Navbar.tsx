@@ -78,9 +78,9 @@ export function Navbar() {
           ))}
 
           <Link
-            href="/admin/new"
-            aria-label="New post"
-            title="New post"
+            href="/admin"
+            aria-label="Admin dashboard"
+            title="Admin"
             className={cn(
               "ml-2 inline-flex h-8 items-center gap-1.5 rounded-md border bg-zinc-900/50 px-2.5 font-mono text-[10px] uppercase tracking-[0.15em] transition-colors",
               isActive("/admin")
@@ -98,9 +98,9 @@ export function Navbar() {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M12 5v14M5 12h14" />
+              <path d="M3 4h18M3 12h18M3 20h18" />
             </svg>
-            New
+            Admin
           </Link>
 
           <a
@@ -159,7 +159,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="/admin/new"
+              href="/admin"
               onClick={closeMenu}
               className={cn(
                 "inline-flex items-center gap-2 rounded-md px-3 py-2 font-mono text-sm uppercase tracking-[0.15em] transition-colors",
@@ -178,9 +178,9 @@ export function Navbar() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M12 5v14M5 12h14" />
+                <path d="M3 4h18M3 12h18M3 20h18" />
               </svg>
-              new post
+              admin
             </Link>
             <a
               href="https://github.com/miggy619/miggy-devlog"

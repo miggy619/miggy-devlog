@@ -1,8 +1,9 @@
 "use server";
 
 import { Octokit } from "@octokit/rest";
-import { createHash, timingSafeEqual } from "node:crypto";
+import { revalidatePath } from "next/cache";
 import { slugify } from "@/lib/slugify";
+import { passwordMatches } from "@/lib/admin-auth";
 
 export type PostResult =
   | {
@@ -26,13 +27,6 @@ const MIME_TO_EXT: Record<string, string> = {
   "image/webp": "webp",
   "image/gif": "gif",
 };
-
-function passwordMatches(input: string, expected: string | undefined): boolean {
-  if (!expected) return false;
-  const a = createHash("sha256").update(input).digest();
-  const b = createHash("sha256").update(expected).digest();
-  return timingSafeEqual(a, b);
-}
 
 function buildFrontmatter(args: {
   title: string;
@@ -248,6 +242,10 @@ export async function createPost(formData: FormData): Promise<PostResult> {
       ref: `heads/${branch}`,
       sha: newCommit.sha,
     });
+
+    revalidatePath("/admin");
+    revalidatePath("/posts");
+    revalidatePath("/");
 
     return {
       ok: true,
