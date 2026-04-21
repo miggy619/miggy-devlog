@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { calculateReadingTime } from "@/lib/reading-time";
@@ -82,17 +83,14 @@ export default async function PostPage({ params }: Props) {
 
           {/* Cover image */}
           {post.image && (
-            <div className="mb-12 rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="relative mb-12 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+              <Image
                 src={post.image}
                 alt={post.title}
-                style={{
-                  width: "100%",
-                  height: "280px",
-                  objectFit: "cover",
-                  display: "block",
-                }}
+                fill
+                sizes="(min-width: 768px) 672px, 100vw"
+                className="object-contain"
+                priority
               />
             </div>
           )}
