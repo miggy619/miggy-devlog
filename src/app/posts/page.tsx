@@ -4,6 +4,7 @@ import { getAllPosts } from "@/lib/posts";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { Reveal } from "@/components/Reveal";
 
 function formatDate(d: string) {
   return new Date(d).toLocaleDateString("en-US", {
@@ -65,7 +66,7 @@ export default function PostsPage() {
         ) : (
           <ol className="flex flex-col">
             {posts.map((post, i) => (
-              <li key={post.slug}>
+              <Reveal key={post.slug} as="li" delay={Math.min(i * 60, 360)}>
                 <Link
                   href={`/posts/${post.slug}`}
                   className="group relative flex flex-col gap-5 border-b border-zinc-800/70 py-8 transition-colors duration-150 hover:border-cyan-400/30 md:flex-row md:items-start md:gap-8 md:py-10"
@@ -126,7 +127,7 @@ export default function PostsPage() {
                     </div>
                   </div>
                 </Link>
-              </li>
+              </Reveal>
             ))}
           </ol>
         )}

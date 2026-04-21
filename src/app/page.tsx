@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Reveal } from "@/components/Reveal";
 
 const TECH = [
   "TypeScript",
@@ -154,18 +155,20 @@ export default function HomePage() {
       {/* ═══ STATS STRIP ═══ */}
       <section className="pb-20">
         <Container size="wide">
-          <div className="grid grid-cols-3 divide-x divide-zinc-800 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 backdrop-blur-sm">
-            <StatCell label="Logs" value={posts.length} />
-            <StatCell label="Building" value="1" accent />
-            <StatCell label="Day" value={daysBuilding} />
-          </div>
+          <Reveal>
+            <div className="grid grid-cols-3 divide-x divide-zinc-800 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 backdrop-blur-sm">
+              <StatCell label="Logs" value={posts.length} />
+              <StatCell label="Building" value="1" accent />
+              <StatCell label="Day" value={daysBuilding} />
+            </div>
+          </Reveal>
         </Container>
       </section>
 
       {/* ═══ NOW BUILDING ═══ */}
       <section className="pb-20">
         <Container size="wide">
-          <div className="gradient-border-wrap">
+          <Reveal className="gradient-border-wrap">
             <div className="relative overflow-hidden rounded-[calc(1rem-1px)] bg-zinc-950/90 p-6 md:p-10 corner-brackets">
               <div
                 aria-hidden
@@ -261,7 +264,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </section>
 
@@ -279,8 +282,8 @@ export default function HomePage() {
             </div>
           ) : (
             <ul className="grid gap-4 md:grid-cols-2">
-              {posts.slice(0, 4).map((post) => (
-                <li key={post.slug}>
+              {posts.slice(0, 4).map((post, i) => (
+                <Reveal key={post.slug} as="li" delay={i * 80}>
                   <Link
                     href={`/posts/${post.slug}`}
                     className="group relative block h-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-400/30 hover:bg-zinc-900/60 card-glow"
@@ -322,7 +325,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </Link>
-                </li>
+                </Reveal>
               ))}
             </ul>
           )}
@@ -342,15 +345,15 @@ function StatCell({
   accent?: boolean;
 }) {
   return (
-    <div className="relative px-5 py-6 text-center md:px-6 md:py-7">
-      <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+    <div className="relative px-2 py-5 text-center sm:px-4 md:px-6 md:py-7">
+      <div className="mb-1.5 font-mono text-[9px] uppercase tracking-[0.15em] text-zinc-500 sm:text-[10px] sm:tracking-[0.2em]">
         {label}
       </div>
       <div
         className={
           accent
-            ? "font-mono text-2xl font-bold tabular-nums text-cyan-400 md:text-3xl"
-            : "font-mono text-2xl font-bold tabular-nums text-zinc-100 md:text-3xl"
+            ? "font-mono text-xl font-bold tabular-nums text-cyan-400 sm:text-2xl md:text-3xl"
+            : "font-mono text-xl font-bold tabular-nums text-zinc-100 sm:text-2xl md:text-3xl"
         }
       >
         {value}
@@ -358,7 +361,7 @@ function StatCell({
       {accent && (
         <div
           aria-hidden
-          className="absolute bottom-0 left-1/2 h-px w-16 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
+          className="absolute bottom-0 left-1/2 h-px w-12 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400 to-transparent sm:w-16"
         />
       )}
     </div>

@@ -42,9 +42,17 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="relative min-h-screen bg-zinc-950 text-zinc-100 font-sans flex flex-col">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:border focus:border-cyan-400/40 focus:bg-zinc-950 focus:px-3 focus:py-1.5 focus:font-mono focus:text-xs focus:uppercase focus:tracking-[0.15em] focus:text-cyan-400"
+        >
+          Skip to content
+        </a>
         <AmbientBackground />
         <Navbar />
-        <main className="relative z-10 flex-1">{children}</main>
+        <main id="main" className="relative z-10 flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
