@@ -77,12 +77,38 @@ export function Navbar() {
             </Link>
           ))}
 
+          <Link
+            href="/admin/new"
+            aria-label="New post"
+            title="New post"
+            className={cn(
+              "ml-2 inline-flex h-8 items-center gap-1.5 rounded-md border bg-zinc-900/50 px-2.5 font-mono text-[10px] uppercase tracking-[0.15em] transition-colors",
+              isActive("/admin")
+                ? "border-cyan-400/40 text-cyan-400"
+                : "border-zinc-800 text-zinc-400 hover:border-cyan-400/30 hover:text-cyan-400",
+            )}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden
+              className="h-3.5 w-3.5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            New
+          </Link>
+
           <a
             href="https://github.com/miggy619/miggy-devlog"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub source"
-            className="ml-2 inline-flex h-8 w-8 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-400 transition-colors hover:border-cyan-400/30 hover:text-cyan-400"
+            className="ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-400 transition-colors hover:border-cyan-400/30 hover:text-cyan-400"
           >
             <svg
               viewBox="0 0 24 24"
@@ -132,6 +158,30 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/admin/new"
+              onClick={closeMenu}
+              className={cn(
+                "inline-flex items-center gap-2 rounded-md px-3 py-2 font-mono text-sm uppercase tracking-[0.15em] transition-colors",
+                isActive("/admin")
+                  ? "bg-cyan-400/10 text-cyan-400"
+                  : "text-zinc-400 hover:bg-zinc-900 hover:text-zinc-100",
+              )}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden
+                className="h-3.5 w-3.5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+              new post
+            </Link>
             <a
               href="https://github.com/miggy619/miggy-devlog"
               target="_blank"
