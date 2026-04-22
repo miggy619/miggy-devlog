@@ -23,7 +23,7 @@ Separation of concerns pays off immediately. `RoundManager` decides **when** and
 
 Also worth remembering: Rojo does not give you Studio's friendly defaults. A TextLabel from a `.model.json` starts at zero size. If something's invisible, check Size first.
 
-## 🔥 Plan for Day 4
+## 🔥 Plan for Day 2.2
 
 Time to give the player a reason to come back for wave 2.
 

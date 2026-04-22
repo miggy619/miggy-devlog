@@ -30,10 +30,10 @@ Net result: tighter Rojo setup than I would've had otherwise. Runtime objects li
 
 Rojo is powerful but it has opinions. If it "owns" a path and your filesystem is empty, it will clean up Studio to match. Know what Rojo controls and what stays in Studio — and keep them separate.
 
-## 🔥 Plan for Day 3
+## 🔥 Plan for Day 2.1
 
 - Add a second enemy type — fast but weak `Spammer` to go alongside the slow tanky `Troll` 👾
 - Build out `RoundManager`: real wave system with difficulty scaling and a break between rounds
 - Win condition — survive X waves
 
-If Day 2 was "make it work," Day 3 is "make it actually feel like a game."
+If Day 2 was "make it work," Day 2.1 is "make it actually feel like a game."

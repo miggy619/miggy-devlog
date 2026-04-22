@@ -22,7 +22,7 @@ Player attributes replace a _lot_ of RemoteEvent plumbing. Anything that's "per-
 
 Also: Rojo's `.model.json` creates GUI elements with **zero** default size and no positioning. Every new UI piece needs a manual styling pass in Studio (Size, Position, AnchorPoint, colors, Font, TextSize). It's annoying the first time but it forces you to actually think about layout instead of accepting Roblox's defaults. I've started treating `.model.json` as _"create the object, I'll style it in Studio"_ and the workflow feels clean.
 
-## 🔥 Plan for Day 5
+## 🔥 Plan for Day 2.5
 
 Close out Phase 1. The game has waves, losing, and progression — but it has no ending.
 
