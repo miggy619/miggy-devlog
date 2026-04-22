@@ -21,14 +21,20 @@ const PROJECT = {
   emoji: "🎮",
   tagline: "Wave-based survival on Roblox. Social commentary + humor.",
   platform: "ROBLOX",
+  phase: "Phase 2 · Game Feel",
   milestones: [
-    { label: "Project setup & folder structure", done: true },
-    { label: "Core scripts scaffolded", done: true },
-    { label: "Basic map with channels", done: true },
-    { label: "First successful play test", done: true },
-    { label: "Enemy spawning system", done: false },
-    { label: "Ban Hammer tool", done: false },
-    { label: "Server health & win / lose", done: false },
+    // Phase 1 — shipped Day 2
+    { label: "Project + Rojo setup", done: true, phase: 1 },
+    { label: "Core scripts + basic map", done: true, phase: 1 },
+    { label: "Enemy spawn + Ban Hammer", done: true, phase: 1 },
+    { label: "Wave system + 2nd enemy", done: true, phase: 1 },
+    { label: "Currency + first upgrade", done: true, phase: 1 },
+    { label: "Win condition + wave counter", done: true, phase: 1 },
+    // Phase 2 — Days 3-9
+    { label: "Hit effects + feedback", done: false, phase: 2 },
+    { label: "More moderation tools", done: false, phase: 2 },
+    { label: "Path variation + new enemies", done: false, phase: 2 },
+    { label: "Real UI pass", done: false, phase: 2 },
   ],
 };
 
@@ -41,8 +47,15 @@ function formatDate(d: string) {
 }
 
 function daysSince(dateStr: string): number {
-  const ms = Date.now() - new Date(dateStr).getTime();
-  return Math.max(1, Math.ceil(ms / (1000 * 60 * 60 * 24)));
+  // Calendar-day diff that's timezone-safe: Day 1 = the start date itself.
+  const [y, m, d] = dateStr.split("-").map(Number);
+  if (!y || !m || !d) return 1;
+  const start = new Date(y, m - 1, d);
+  const today = new Date();
+  start.setHours(0, 0, 0, 0);
+  today.setHours(0, 0, 0, 0);
+  const diff = Math.round((today.getTime() - start.getTime()) / 86_400_000);
+  return Math.max(1, diff + 1);
 }
 
 export default function HomePage() {
@@ -183,7 +196,7 @@ export default function HomePage() {
                 {/* Left: project info */}
                 <div>
                   <Eyebrow pulse tone="cyan" className="mb-5">
-                    Now Building
+                    Now Building · {PROJECT.phase}
                   </Eyebrow>
 
                   <div className="mb-3 flex items-center gap-3">
@@ -229,37 +242,38 @@ export default function HomePage() {
 
                 {/* Right: milestones */}
                 <div>
-                  <div className="mb-5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">
-                    Milestones
+                  <div className="mb-5 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+                    <span>Milestones</span>
+                    <span className="text-emerald-400">Phase 1 ✓ shipped</span>
                   </div>
-                  <ul className="space-y-3">
-                    {PROJECT.milestones.map((m, i) => (
-                      <li
-                        key={m.label}
-                        className="flex items-center gap-3 font-mono text-sm"
-                        style={{ animationDelay: `${i * 40}ms` }}
-                      >
-                        <span
+                  <ul className="space-y-2.5">
+                    {PROJECT.milestones.map((m, i) => {
+                      const prev = PROJECT.milestones[i - 1];
+                      const isPhaseBreak = prev && prev.phase !== m.phase;
+                      return (
+                        <li
+                          key={m.label}
                           className={
-                            m.done
-                              ? "flex h-5 w-5 shrink-0 items-center justify-center rounded border border-cyan-400/50 bg-cyan-400/15 text-[11px] font-bold text-cyan-400"
-                              : "flex h-5 w-5 shrink-0 items-center justify-center rounded border border-zinc-800 bg-zinc-900 text-zinc-700"
-                          }
-                          aria-hidden
-                        >
-                          {m.done ? "✓" : ""}
-                        </span>
-                        <span
-                          className={
-                            m.done
-                              ? "text-zinc-200"
-                              : "text-zinc-600"
+                            "flex items-center gap-3 font-mono text-sm" +
+                            (isPhaseBreak ? " mt-4 border-t border-zinc-800/70 pt-4" : "")
                           }
                         >
-                          {m.label}
-                        </span>
-                      </li>
-                    ))}
+                          <span
+                            className={
+                              m.done
+                                ? "flex h-5 w-5 shrink-0 items-center justify-center rounded border border-cyan-400/50 bg-cyan-400/15 text-[11px] font-bold text-cyan-400"
+                                : "flex h-5 w-5 shrink-0 items-center justify-center rounded border border-zinc-800 bg-zinc-900 text-zinc-700"
+                            }
+                            aria-hidden
+                          >
+                            {m.done ? "✓" : ""}
+                          </span>
+                          <span className={m.done ? "text-zinc-200" : "text-zinc-500"}>
+                            {m.label}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
