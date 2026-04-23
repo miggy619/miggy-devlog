@@ -12,7 +12,7 @@ const TECH = [
   "TypeScript",
   "Roblox · Luau",
   "Next.js",
-  "Node.js",
+  "Python",
   "AI workflows",
 ];
 
@@ -31,11 +31,21 @@ const PROJECT = {
     { label: "Currency + first upgrade", done: true, phase: 1 },
     { label: "Win condition + wave counter", done: true, phase: 1 },
     // Phase 2 — Days 3-9
-    { label: "Hit effects + feedback", done: false, phase: 2 },
+    { label: "Hit effects + feedback", done: true, phase: 2 },
     { label: "More moderation tools", done: false, phase: 2 },
     { label: "Path variation + new enemies", done: false, phase: 2 },
     { label: "Real UI pass", done: false, phase: 2 },
   ],
+};
+
+const SECONDARY_PROJECT = {
+  name: "Content Engine",
+  emoji: "🧪",
+  tagline: "Python pipeline — scrape sources, cluster patterns, draft posts. Feeds this blog.",
+  platform: "PYTHON · SQLITE",
+  phase: "Week 1 · Scraping",
+  done: "Scaffold + Reddit scraper + SQLite layer",
+  next: "Reddit creds → first real run + `query` command",
 };
 
 function formatDate(d: string) {
@@ -171,7 +181,7 @@ export default function HomePage() {
           <Reveal>
             <div className="grid grid-cols-3 divide-x divide-zinc-800 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 backdrop-blur-sm">
               <StatCell label="Logs" value={posts.length} />
-              <StatCell label="Building" value="1" accent />
+              <StatCell label="Projects" value="2" accent />
               <StatCell label="Day" value={daysBuilding} />
             </div>
           </Reveal>
@@ -275,6 +285,67 @@ export default function HomePage() {
                       );
                     })}
                   </ul>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* ═══ ALSO BUILDING ═══ */}
+      <section className="pb-20">
+        <Container size="wide">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 p-6 backdrop-blur-sm md:p-8">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-10 -top-10 h-[300px] w-[300px] rounded-full bg-emerald-400/[0.04] blur-3xl"
+              />
+              <div className="relative flex flex-col gap-5 md:flex-row md:items-start md:justify-between md:gap-10">
+                <div className="flex-1">
+                  <Eyebrow tone="emerald" className="mb-4">
+                    Also Building · {SECONDARY_PROJECT.phase}
+                  </Eyebrow>
+                  <div className="mb-2 flex items-center gap-3">
+                    <span className="text-3xl">{SECONDARY_PROJECT.emoji}</span>
+                    <h2 className="text-xl font-bold tracking-tight text-zinc-100 md:text-2xl">
+                      {SECONDARY_PROJECT.name}
+                    </h2>
+                  </div>
+                  <p className="mb-5 max-w-xl text-sm leading-relaxed text-zinc-400 md:text-base">
+                    {SECONDARY_PROJECT.tagline}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Badge variant="outline">{SECONDARY_PROJECT.platform}</Badge>
+                    <Link
+                      href="/posts"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.15em] text-emerald-400 transition-colors hover:text-emerald-300"
+                    >
+                      Read dev log
+                      <span aria-hidden>→</span>
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-3 font-mono text-xs md:min-w-[280px] md:max-w-sm md:border-l md:border-zinc-800 md:pl-8">
+                  <div>
+                    <div className="mb-1.5 uppercase tracking-[0.2em] text-zinc-500">
+                      Shipped
+                    </div>
+                    <div className="flex gap-2 text-zinc-300">
+                      <span className="text-emerald-400" aria-hidden>✓</span>
+                      <span>{SECONDARY_PROJECT.done}</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="mb-1.5 uppercase tracking-[0.2em] text-zinc-500">
+                      Next
+                    </div>
+                    <div className="flex gap-2 text-zinc-300">
+                      <span className="text-cyan-400" aria-hidden>→</span>
+                      <span>{SECONDARY_PROJECT.next}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
