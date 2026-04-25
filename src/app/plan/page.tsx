@@ -50,12 +50,11 @@ export default async function PlanPage() {
           Build <span className="gradient-text">Plan</span>
         </h1>
 
-        <p className="mb-7 text-lg leading-relaxed text-zinc-400">
-          What I&apos;m working toward over the next 3, 6, and 12 months. The
-          checklist is read-only — source of truth lives in{" "}
-          <code className="font-mono text-cyan-400">content/plan.md</code> and
-          updates ship as commits.
-        </p>
+        {meta.bet && (
+          <p className="mb-7 text-lg leading-relaxed text-zinc-400">
+            {meta.bet}
+          </p>
+        )}
 
         {/* Meta row */}
         <div className="mb-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-500">

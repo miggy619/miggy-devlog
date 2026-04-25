@@ -13,6 +13,7 @@ export type PlanMeta = {
   nextReview: string;
   quitTrigger: string;
   runwayTarget: string;
+  bet?: string;
 };
 
 export type HorizonSection = {
