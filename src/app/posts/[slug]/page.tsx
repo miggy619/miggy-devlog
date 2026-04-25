@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const post = await getPostBySlug(slug);
     return {
-      title: `${post.title} · miggy.log`,
+      title: `${post.title} · miggydev.log`,
       description: post.summary,
       openGraph: {
         title: post.title,
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     };
   } catch {
-    return { title: "Not found · miggy.log" };
+    return { title: "Not found · miggydev.log" };
   }
 }
 
@@ -118,7 +118,7 @@ export default async function PostPage({ params }: Props) {
             <span className="text-zinc-700">·</span>
             <span>{readingMinutes} min read</span>
             <span className="text-zinc-700">·</span>
-            <span className="text-zinc-600">miggy</span>
+            <span className="text-zinc-600">miggydev</span>
           </div>
 
           {post.tags && post.tags.length > 0 && (

@@ -25,7 +25,7 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "miggy.log — dev log & experiments",
+  title: "miggydev.log — dev log & experiments",
   description:
     "Software engineer building games, tools & experiments. Build fast. Ship often. Learn in public.",
 };

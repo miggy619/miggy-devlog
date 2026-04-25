@@ -11,7 +11,7 @@ export function Footer() {
           <p className="font-mono text-xs text-zinc-600">
             <span className="text-cyan-400">▸</span> built with intent
             <span className="mx-2 text-zinc-800">/</span>
-            © {year} miggy
+            © {year} miggydev
           </p>
           <nav className="flex items-center gap-6 font-mono text-xs uppercase tracking-[0.15em]">
             <a

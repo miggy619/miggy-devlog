@@ -32,7 +32,7 @@ const PROJECT = {
     { label: "Win condition + wave counter", done: true, phase: 1 },
     // Phase 2 — Days 3-9
     { label: "Hit effects + feedback", done: true, phase: 2 },
-    { label: "More moderation tools", done: false, phase: 2 },
+    { label: "More moderation tools", done: true, phase: 2 },
     { label: "Path variation + new enemies", done: false, phase: 2 },
     { label: "Real UI pass", done: false, phase: 2 },
   ],
@@ -44,8 +44,8 @@ const SECONDARY_PROJECT = {
   tagline: "Python pipeline — scrape sources, cluster patterns, draft posts. Feeds this blog.",
   platform: "PYTHON · SQLITE",
   phase: "Week 1 · Scraping",
-  done: "Scaffold + Reddit scraper + SQLite layer",
-  next: "Reddit creds → first real run + `query` command",
+  done: "Reddit live (public JSON, dedup verified) + SQLite layer",
+  next: "`query` command + README, then YouTube scraper",
 };
 
 function formatDate(d: string) {
@@ -89,7 +89,7 @@ export default function HomePage() {
               </Eyebrow>
 
               <h1 className="mb-5 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
-                Hey, I&apos;m <span className="gradient-text">Miggy</span>
+                Hey, I&apos;m <span className="gradient-text">MiggyDev</span>
               </h1>
 
               <p className="mb-3 max-w-lg text-lg leading-relaxed text-zinc-400 md:text-xl">
@@ -144,7 +144,7 @@ export default function HomePage() {
                   <div className="relative h-full w-full overflow-hidden rounded-full">
                     <Image
                       src="/images/avatar.gif"
-                      alt="Miggy"
+                      alt="MiggyDev"
                       fill
                       unoptimized
                       priority

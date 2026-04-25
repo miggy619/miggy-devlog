@@ -40,14 +40,14 @@ export function Navbar() {
         {/* Brand */}
         <Link
           href="/"
-          aria-label="miggy.log home"
+          aria-label="miggydev.log home"
           className="group inline-flex items-center gap-2 font-mono text-sm"
         >
           <span className="text-cyan-400 text-base leading-none transition-transform group-hover:translate-x-0.5">
             ▸
           </span>
           <span className="font-semibold text-zinc-100 transition-colors group-hover:text-cyan-400">
-            miggy
+            miggydev
           </span>
           <span className="text-zinc-600 transition-colors group-hover:text-zinc-500">
             .log

@@ -78,7 +78,7 @@ export function MarkdownPreview({
           <span className="text-zinc-700">·</span>
           <span className="text-zinc-600">preview</span>
           <span className="text-zinc-700">·</span>
-          <span className="text-zinc-600">miggy</span>
+          <span className="text-zinc-600">miggydev</span>
         </div>
 
         {tags.length > 0 && (
