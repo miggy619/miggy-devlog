@@ -17,7 +17,7 @@ export function Stat({ label, value, accent = false, className }: StatProps) {
       <div
         className={cn(
           "font-mono text-2xl font-bold tabular-nums md:text-3xl",
-          accent ? "text-cyan-400" : "text-zinc-100",
+          accent ? "text-yellow-400" : "text-zinc-100",
         )}
       >
         {value}

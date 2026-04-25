@@ -44,10 +44,10 @@ export function Navbar() {
           aria-label="miggydev.log home"
           className="group inline-flex items-center gap-2 font-mono text-sm"
         >
-          <span className="text-cyan-400 text-base leading-none transition-transform group-hover:translate-x-0.5">
+          <span className="text-yellow-400 text-base leading-none transition-transform group-hover:translate-x-0.5">
             ▸
           </span>
-          <span className="font-semibold text-zinc-100 transition-colors group-hover:text-cyan-400">
+          <span className="font-semibold text-zinc-100 transition-colors group-hover:text-yellow-400">
             miggydev
           </span>
           <span className="text-zinc-600 transition-colors group-hover:text-zinc-500">
@@ -64,7 +64,7 @@ export function Navbar() {
               className={cn(
                 "relative rounded-md px-3 py-1.5 font-mono text-xs uppercase tracking-[0.15em] transition-colors",
                 isActive(link.href)
-                  ? "text-cyan-400"
+                  ? "text-yellow-400"
                   : "text-zinc-500 hover:text-zinc-200",
               )}
             >
@@ -72,7 +72,7 @@ export function Navbar() {
               {isActive(link.href) && (
                 <span
                   aria-hidden
-                  className="absolute inset-x-3 bottom-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
+                  className="absolute inset-x-3 bottom-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-yellow-400 to-transparent"
                 />
               )}
             </Link>
@@ -85,8 +85,8 @@ export function Navbar() {
             className={cn(
               "ml-2 inline-flex h-8 items-center gap-1.5 rounded-md border bg-zinc-900/50 px-2.5 font-mono text-[10px] uppercase tracking-[0.15em] transition-colors",
               isActive("/admin")
-                ? "border-cyan-400/40 text-cyan-400"
-                : "border-zinc-800 text-zinc-400 hover:border-cyan-400/30 hover:text-cyan-400",
+                ? "border-yellow-400/40 text-yellow-400"
+                : "border-zinc-800 text-zinc-400 hover:border-yellow-400/30 hover:text-yellow-400",
             )}
           >
             <svg
@@ -109,7 +109,7 @@ export function Navbar() {
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub source"
-            className="ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-400 transition-colors hover:border-cyan-400/30 hover:text-cyan-400"
+            className="ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/50 text-zinc-400 transition-colors hover:border-yellow-400/30 hover:text-yellow-400"
           >
             <svg
               viewBox="0 0 24 24"
@@ -152,7 +152,7 @@ export function Navbar() {
                 className={cn(
                   "rounded-md px-3 py-2 font-mono text-sm uppercase tracking-[0.15em] transition-colors",
                   isActive(link.href)
-                    ? "bg-cyan-400/10 text-cyan-400"
+                    ? "bg-yellow-400/10 text-yellow-400"
                     : "text-zinc-400 hover:bg-zinc-900 hover:text-zinc-100",
                 )}
               >
@@ -165,7 +165,7 @@ export function Navbar() {
               className={cn(
                 "inline-flex items-center gap-2 rounded-md px-3 py-2 font-mono text-sm uppercase tracking-[0.15em] transition-colors",
                 isActive("/admin")
-                  ? "bg-cyan-400/10 text-cyan-400"
+                  ? "bg-yellow-400/10 text-yellow-400"
                   : "text-zinc-400 hover:bg-zinc-900 hover:text-zinc-100",
               )}
             >

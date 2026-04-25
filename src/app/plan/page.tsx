@@ -105,7 +105,7 @@ export default async function PlanPage() {
             >
               <summary className="flex items-center justify-between gap-4 p-6 md:p-8">
                 <div className="flex items-center gap-3">
-                  <span aria-hidden className="chevron text-lg text-cyan-400">
+                  <span aria-hidden className="chevron text-lg text-yellow-400">
                     ▸
                   </span>
                   <h2 className="text-xl font-bold tracking-tight text-zinc-100 md:text-2xl">
@@ -115,7 +115,7 @@ export default async function PlanPage() {
                 <span
                   className={
                     "shrink-0 font-mono text-xs tabular-nums " +
-                    (activeHorizon === s.slug ? "text-cyan-400" : "text-zinc-500")
+                    (activeHorizon === s.slug ? "text-yellow-400" : "text-zinc-500")
                   }
                 >
                   {summaryCount}
@@ -135,7 +135,7 @@ export default async function PlanPage() {
       <div className="mt-16 flex items-center justify-between border-t border-zinc-800 pt-8">
         <Link
           href="/posts"
-          className="group inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-cyan-400"
+          className="group inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-yellow-400"
         >
           <span
             aria-hidden
@@ -147,7 +147,7 @@ export default async function PlanPage() {
         </Link>
         <Link
           href="/"
-          className="group inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-cyan-400"
+          className="group inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-yellow-400"
         >
           Home
           <span
@@ -182,7 +182,7 @@ function PlanStatCell({
       <div
         className={
           active
-            ? "font-mono text-xl font-bold tabular-nums text-cyan-400 sm:text-2xl md:text-3xl"
+            ? "font-mono text-xl font-bold tabular-nums text-yellow-400 sm:text-2xl md:text-3xl"
             : "font-mono text-xl font-bold tabular-nums text-zinc-100 sm:text-2xl md:text-3xl"
         }
       >
@@ -191,7 +191,7 @@ function PlanStatCell({
       {active && (
         <div
           aria-hidden
-          className="absolute bottom-0 left-1/2 h-px w-12 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400 to-transparent sm:w-16"
+          className="absolute bottom-0 left-1/2 h-px w-12 -translate-x-1/2 bg-gradient-to-r from-transparent via-yellow-400 to-transparent sm:w-16"
         />
       )}
     </div>

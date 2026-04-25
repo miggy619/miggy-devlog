@@ -84,7 +84,7 @@ export default function HomePage() {
           <div className="grid items-center gap-12 md:grid-cols-[1.3fr_1fr] md:gap-16">
             {/* Left column */}
             <div className="animate-fade-up order-2 md:order-1">
-              <Eyebrow pulse tone="cyan" className="mb-6">
+              <Eyebrow pulse tone="yellow" className="mb-6">
                 Status: Building
               </Eyebrow>
 
@@ -98,9 +98,9 @@ export default function HomePage() {
 
               <p className="mb-8 font-mono text-sm text-zinc-500">
                 Build fast
-                <span className="mx-2 text-cyan-400/60">·</span>
+                <span className="mx-2 text-yellow-400/60">·</span>
                 Ship often
-                <span className="mx-2 text-cyan-400/60">·</span>
+                <span className="mx-2 text-yellow-400/60">·</span>
                 Learn in public
               </p>
 
@@ -137,10 +137,10 @@ export default function HomePage() {
                 {/* Outer glow */}
                 <div
                   aria-hidden
-                  className="animate-float absolute inset-0 scale-110 rounded-full bg-gradient-to-br from-cyan-400/40 via-violet-400/30 to-cyan-400/20 blur-3xl"
+                  className="animate-float absolute inset-0 scale-110 rounded-full bg-gradient-to-br from-yellow-400/40 via-yellow-300/30 to-yellow-400/20 blur-3xl"
                 />
                 {/* Ring wrapper */}
-                <div className="relative h-44 w-44 rounded-full ring-2 ring-cyan-400/50 ring-offset-[6px] ring-offset-zinc-950 md:h-52 md:w-52">
+                <div className="relative h-44 w-44 rounded-full ring-2 ring-yellow-400/50 ring-offset-[6px] ring-offset-zinc-950 md:h-52 md:w-52">
                   <div className="relative h-full w-full overflow-hidden rounded-full">
                     <Image
                       src="/images/avatar.gif"
@@ -195,17 +195,17 @@ export default function HomePage() {
             <div className="relative overflow-hidden rounded-[calc(1rem-1px)] bg-zinc-950/90 p-6 md:p-10 corner-brackets">
               <div
                 aria-hidden
-                className="pointer-events-none absolute -right-20 -top-20 h-[500px] w-[500px] rounded-full bg-cyan-400/[0.05] blur-3xl"
+                className="pointer-events-none absolute -right-20 -top-20 h-[500px] w-[500px] rounded-full bg-yellow-400/[0.05] blur-3xl"
               />
               <div
                 aria-hidden
-                className="pointer-events-none absolute -left-10 -bottom-20 h-[400px] w-[400px] rounded-full bg-violet-400/[0.04] blur-3xl"
+                className="pointer-events-none absolute -left-10 -bottom-20 h-[400px] w-[400px] rounded-full bg-yellow-300/[0.04] blur-3xl"
               />
 
               <div className="relative grid gap-10 md:grid-cols-[1fr_1.1fr]">
                 {/* Left: project info */}
                 <div>
-                  <Eyebrow pulse tone="cyan" className="mb-5">
+                  <Eyebrow pulse tone="yellow" className="mb-5">
                     Now Building · {PROJECT.phase}
                   </Eyebrow>
 
@@ -225,14 +225,14 @@ export default function HomePage() {
                       <span className="uppercase tracking-[0.2em] text-zinc-500">
                         Progress
                       </span>
-                      <span className="text-cyan-400 tabular-nums">
+                      <span className="text-yellow-400 tabular-nums">
                         {completed}/{total}{" "}
                         <span className="text-zinc-700">· {progressPct}%</span>
                       </span>
                     </div>
                     <div className="h-1.5 overflow-hidden rounded-full border border-zinc-800 bg-zinc-900">
                       <div
-                        className="h-full bg-gradient-to-r from-cyan-400 via-cyan-300 to-violet-400 shadow-[0_0_12px_rgba(34,211,238,0.6)] transition-[width] duration-700 ease-out"
+                        className="h-full bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 shadow-[0_0_12px_rgba(250,204,21,0.6)] transition-[width] duration-700 ease-out"
                         style={{ width: `${progressPct}%` }}
                       />
                     </div>
@@ -242,7 +242,7 @@ export default function HomePage() {
                     <Badge variant="outline">{PROJECT.platform}</Badge>
                     <Link
                       href="/posts"
-                      className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.15em] text-cyan-400 transition-colors hover:text-cyan-300"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.15em] text-yellow-400 transition-colors hover:text-yellow-300"
                     >
                       Read dev log
                       <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
@@ -271,7 +271,7 @@ export default function HomePage() {
                           <span
                             className={
                               m.done
-                                ? "flex h-5 w-5 shrink-0 items-center justify-center rounded border border-cyan-400/50 bg-cyan-400/15 text-[11px] font-bold text-cyan-400"
+                                ? "flex h-5 w-5 shrink-0 items-center justify-center rounded border border-yellow-400/50 bg-yellow-400/15 text-[11px] font-bold text-yellow-400"
                                 : "flex h-5 w-5 shrink-0 items-center justify-center rounded border border-zinc-800 bg-zinc-900 text-zinc-700"
                             }
                             aria-hidden
@@ -342,7 +342,7 @@ export default function HomePage() {
                       Next
                     </div>
                     <div className="flex gap-2 text-zinc-300">
-                      <span className="text-cyan-400" aria-hidden>→</span>
+                      <span className="text-yellow-400" aria-hidden>→</span>
                       <span>{SECONDARY_PROJECT.next}</span>
                     </div>
                   </div>
@@ -371,7 +371,7 @@ export default function HomePage() {
                 <Reveal key={post.slug} as="li" delay={i * 80}>
                   <Link
                     href={`/posts/${post.slug}`}
-                    className="group relative block h-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-400/30 hover:bg-zinc-900/60 card-glow"
+                    className="group relative block h-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-yellow-400/30 hover:bg-zinc-900/60 card-glow"
                   >
                     {post.image && (
                       <div className="relative aspect-[16/7] w-full overflow-hidden border-b border-zinc-800">
@@ -397,7 +397,7 @@ export default function HomePage() {
                           </Badge>
                         ))}
                       </div>
-                      <h3 className="text-lg font-semibold leading-snug tracking-tight text-zinc-100 transition-colors group-hover:text-cyan-400">
+                      <h3 className="text-lg font-semibold leading-snug tracking-tight text-zinc-100 transition-colors group-hover:text-yellow-400">
                         {post.title}
                       </h3>
                       {post.summary && (
@@ -405,7 +405,7 @@ export default function HomePage() {
                           {post.summary}
                         </p>
                       )}
-                      <div className="mt-1 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-400 opacity-0 transition-opacity group-hover:opacity-100">
+                      <div className="mt-1 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-yellow-400 opacity-0 transition-opacity group-hover:opacity-100">
                         Read <span aria-hidden>→</span>
                       </div>
                     </div>
@@ -437,7 +437,7 @@ function StatCell({
       <div
         className={
           accent
-            ? "font-mono text-xl font-bold tabular-nums text-cyan-400 sm:text-2xl md:text-3xl"
+            ? "font-mono text-xl font-bold tabular-nums text-yellow-400 sm:text-2xl md:text-3xl"
             : "font-mono text-xl font-bold tabular-nums text-zinc-100 sm:text-2xl md:text-3xl"
         }
       >
@@ -446,7 +446,7 @@ function StatCell({
       {accent && (
         <div
           aria-hidden
-          className="absolute bottom-0 left-1/2 h-px w-12 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400 to-transparent sm:w-16"
+          className="absolute bottom-0 left-1/2 h-px w-12 -translate-x-1/2 bg-gradient-to-r from-transparent via-yellow-400 to-transparent sm:w-16"
         />
       )}
     </div>

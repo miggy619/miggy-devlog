@@ -9,7 +9,7 @@ export function Footer() {
       <Container size="wide" className="py-10">
         <div className="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row">
           <p className="font-mono text-xs text-zinc-600">
-            <span className="text-cyan-400">▸</span> built with intent
+            <span className="text-yellow-400">▸</span> built with intent
             <span className="mx-2 text-zinc-800">/</span>
             © {year} miggydev
           </p>
@@ -18,19 +18,19 @@ export function Footer() {
               href="https://github.com/MiggyDev619/miggy-devlog"
               target="_blank"
               rel="noreferrer"
-              className="text-zinc-500 transition-colors hover:text-cyan-400"
+              className="text-zinc-500 transition-colors hover:text-yellow-400"
             >
               source ↗
             </a>
             <Link
               href="/"
-              className="text-zinc-500 transition-colors hover:text-cyan-400"
+              className="text-zinc-500 transition-colors hover:text-yellow-400"
             >
               home
             </Link>
             <Link
               href="/posts"
-              className="text-zinc-500 transition-colors hover:text-cyan-400"
+              className="text-zinc-500 transition-colors hover:text-yellow-400"
             >
               logs
             </Link>

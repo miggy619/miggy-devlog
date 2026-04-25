@@ -83,7 +83,7 @@ export default async function PostPage({ params }: Props) {
         {/* ── Back ─────────────────────────────────────────────── */}
         <Link
           href="/posts"
-          className="group mb-12 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-cyan-400"
+          className="group mb-12 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-yellow-400"
         >
           <span
             aria-hidden
@@ -177,7 +177,7 @@ export default async function PostPage({ params }: Props) {
         <div className="mt-10 flex items-center justify-between border-t border-zinc-800 pt-8">
           <Link
             href="/posts"
-            className="group inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-cyan-400"
+            className="group inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-yellow-400"
           >
             <span
               aria-hidden
@@ -189,7 +189,7 @@ export default async function PostPage({ params }: Props) {
           </Link>
           <Link
             href="/"
-            className="group inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-cyan-400"
+            className="group inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-yellow-400"
           >
             Home
             <span
@@ -216,11 +216,11 @@ function PostNavCard({
   return (
     <Link
       href={`/posts/${post.slug}`}
-      className={`group flex flex-col gap-1.5 rounded-xl border border-zinc-800 bg-zinc-950/40 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-400/30 hover:bg-zinc-900/60 ${
+      className={`group flex flex-col gap-1.5 rounded-xl border border-zinc-800 bg-zinc-950/40 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-yellow-400/30 hover:bg-zinc-900/60 ${
         isNewer ? "" : "sm:text-right"
       }`}
     >
-      <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600 transition-colors group-hover:text-cyan-400">
+      <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600 transition-colors group-hover:text-yellow-400">
         {isNewer && (
           <span
             aria-hidden
@@ -239,7 +239,7 @@ function PostNavCard({
           </span>
         )}
       </span>
-      <span className="line-clamp-2 text-sm font-medium leading-snug text-zinc-200 transition-colors group-hover:text-cyan-400">
+      <span className="line-clamp-2 text-sm font-medium leading-snug text-zinc-200 transition-colors group-hover:text-yellow-400">
         {post.title}
       </span>
     </Link>

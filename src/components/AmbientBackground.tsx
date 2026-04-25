@@ -52,7 +52,7 @@ export function AmbientBackground() {
       className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
     >
       {/* Base gradient wash */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(34,211,238,0.08),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(250,204,21,0.08),transparent_60%)]" />
 
       {/* Subtle grid lines */}
       <div className="absolute inset-0 grid-lines opacity-60" />
@@ -63,12 +63,12 @@ export function AmbientBackground() {
       {/* Cursor-follow glow */}
       <div
         ref={glowRef}
-        className="absolute h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.08),transparent_60%)] blur-2xl will-change-transform"
+        className="absolute h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(250,204,21,0.08),transparent_60%)] blur-2xl will-change-transform"
         style={{ transform: "translate3d(-50%, -50%, 0)" }}
       />
 
       {/* Bottom violet glow */}
-      <div className="absolute bottom-0 left-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(167,139,250,0.06),transparent_60%)] blur-3xl" />
+      <div className="absolute bottom-0 left-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(253,224,71,0.06),transparent_60%)] blur-3xl" />
 
       {/* Noise */}
       <div className="absolute inset-0 noise-overlay" />

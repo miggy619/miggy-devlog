@@ -4,11 +4,11 @@ import { cn } from "@/lib/utils";
 type EyebrowProps = React.HTMLAttributes<HTMLSpanElement> & {
   icon?: React.ReactNode;
   pulse?: boolean;
-  tone?: "cyan" | "zinc" | "emerald";
+  tone?: "yellow" | "zinc" | "emerald";
 };
 
 const TONES = {
-  cyan: "text-cyan-400",
+  yellow: "text-yellow-400",
   zinc: "text-zinc-500",
   emerald: "text-emerald-400",
 } as const;
@@ -18,7 +18,7 @@ export function Eyebrow({
   children,
   icon,
   pulse = false,
-  tone = "cyan",
+  tone = "yellow",
   ...props
 }: EyebrowProps) {
   return (

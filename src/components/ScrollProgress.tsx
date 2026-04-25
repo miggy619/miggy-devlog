@@ -22,7 +22,7 @@ export function ScrollProgress() {
       aria-hidden
     >
       <div
-        className="h-full bg-gradient-to-r from-cyan-400 via-violet-400 to-cyan-400"
+        className="h-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400"
         style={{ width: `${progress}%`, transition: 'width 0.1s ease-out' }}
       />
     </div>

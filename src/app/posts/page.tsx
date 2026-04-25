@@ -34,7 +34,7 @@ export default function PostsPage() {
           </h1>
           <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-500">
             <span>
-              <span className="text-cyan-400">{total}</span>{" "}
+              <span className="text-yellow-400">{total}</span>{" "}
               {total === 1 ? "entry" : "entries"}
             </span>
             <span className="text-zinc-700">/</span>
@@ -69,11 +69,11 @@ export default function PostsPage() {
               <Reveal key={post.slug} as="li" delay={Math.min(i * 60, 360)}>
                 <Link
                   href={`/posts/${post.slug}`}
-                  className="group relative flex flex-col gap-5 border-b border-zinc-800/70 py-8 transition-colors duration-150 hover:border-cyan-400/30 md:flex-row md:items-start md:gap-8 md:py-10"
+                  className="group relative flex flex-col gap-5 border-b border-zinc-800/70 py-8 transition-colors duration-150 hover:border-yellow-400/30 md:flex-row md:items-start md:gap-8 md:py-10"
                 >
                   {/* Index number */}
                   <div className="hidden w-10 shrink-0 pt-1 md:block">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-700 transition-colors group-hover:text-cyan-400/70">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-700 transition-colors group-hover:text-yellow-400/70">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
@@ -106,7 +106,7 @@ export default function PostsPage() {
                       ))}
                     </div>
 
-                    <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 transition-colors group-hover:text-cyan-400 md:text-2xl">
+                    <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 transition-colors group-hover:text-yellow-400 md:text-2xl">
                       {post.title}
                     </h2>
 
@@ -116,7 +116,7 @@ export default function PostsPage() {
                       </p>
                     )}
 
-                    <div className="mt-2 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600 transition-colors group-hover:text-cyan-400">
+                    <div className="mt-2 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600 transition-colors group-hover:text-yellow-400">
                       read log
                       <span
                         aria-hidden

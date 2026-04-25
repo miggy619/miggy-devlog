@@ -226,7 +226,7 @@ export function PostForm(props: Props) {
             : "Submitting commits a new markdown file to "}
           {!isEdit && (
             <>
-              <code className="rounded bg-zinc-900 px-1.5 py-0.5 font-mono text-[11px] text-cyan-400">
+              <code className="rounded bg-zinc-900 px-1.5 py-0.5 font-mono text-[11px] text-yellow-400">
                 content/posts/
               </code>
               . Vercel redeploys automatically on push (usually ~60s).
@@ -248,7 +248,7 @@ export function PostForm(props: Props) {
           className={cn(
             "rounded-md px-3.5 py-1.5 transition-colors",
             mode === "write"
-              ? "bg-cyan-400/10 text-cyan-400"
+              ? "bg-yellow-400/10 text-yellow-400"
               : "text-zinc-500 hover:text-zinc-300",
           )}
         >
@@ -262,7 +262,7 @@ export function PostForm(props: Props) {
           className={cn(
             "rounded-md px-3.5 py-1.5 transition-colors",
             mode === "raw"
-              ? "bg-cyan-400/10 text-cyan-400"
+              ? "bg-yellow-400/10 text-yellow-400"
               : "text-zinc-500 hover:text-zinc-300",
           )}
         >
@@ -276,7 +276,7 @@ export function PostForm(props: Props) {
           className={cn(
             "rounded-md px-3.5 py-1.5 transition-colors",
             mode === "preview"
-              ? "bg-cyan-400/10 text-cyan-400"
+              ? "bg-yellow-400/10 text-yellow-400"
               : "text-zinc-500 hover:text-zinc-300",
           )}
         >
@@ -378,7 +378,7 @@ export function PostForm(props: Props) {
                     {" "}
                     <span className="text-zinc-400">
                       Cover referenced{" "}
-                      <code className="rounded bg-zinc-900 px-1 py-0.5 text-cyan-400">
+                      <code className="rounded bg-zinc-900 px-1 py-0.5 text-yellow-400">
                         {parseFeedback.imagePath}
                       </code>
                       {" "}— upload the file below if it isn&apos;t committed yet.
@@ -481,7 +481,7 @@ export function PostForm(props: Props) {
                       <button
                         type="button"
                         onClick={() => setRemoveImage(false)}
-                        className="ml-auto shrink-0 rounded-md border border-zinc-800 px-2 py-0.5 uppercase tracking-[0.15em] text-zinc-400 hover:border-cyan-400/30 hover:text-cyan-400"
+                        className="ml-auto shrink-0 rounded-md border border-zinc-800 px-2 py-0.5 uppercase tracking-[0.15em] text-zinc-400 hover:border-yellow-400/30 hover:text-yellow-400"
                       >
                         Undo
                       </button>
@@ -618,7 +618,7 @@ function ResultPanel({
 
   return (
     <div className="mt-8 rounded-xl border border-red-500/30 bg-red-500/5 p-5">
-      <Eyebrow tone="cyan" className="mb-2 !text-red-400">
+      <Eyebrow tone="yellow" className="mb-2 !text-red-400">
         ▸ Failed
       </Eyebrow>
       <p className="text-sm text-red-300">{result.error}</p>
