@@ -38,15 +38,28 @@ const PROJECT = {
   ],
 };
 
-const SECONDARY_PROJECT = {
-  name: "Content Engine",
-  emoji: "🧪",
-  tagline: "Cross-poster CLI — record a clip once, queue it to TikTok / Shorts / Reels / X with per-platform captions and metrics in one place.",
-  platform: "PYTHON · SQLITE",
-  phase: "Pivoted · Cross-poster",
-  done: "Cross-poster scaffold + `clip add` E2E + 10 clips planned & audited",
-  next: "Sunday batch recording → `caption draft` (Anthropic per platform)",
-};
+const SECONDARY_PROJECTS = [
+  {
+    name: "Content Engine",
+    emoji: "🧪",
+    tagline:
+      "Cross-poster CLI — record a clip once, queue it to TikTok / Shorts / Reels / X with per-platform captions and metrics in one place.",
+    platform: "PYTHON · SQLITE",
+    phase: "Pivoted · Cross-poster",
+    done: "Cross-poster scaffold + `clip add` E2E + 10 clips planned & audited",
+    next: "Sunday batch recording → `caption draft` (Anthropic per platform)",
+  },
+  {
+    name: "Bethesda",
+    emoji: "✦",
+    tagline:
+      "Live multiplayer Bible study — host walks the room through scripture; players follow on their phones with quizzes, anonymous Q&A, per-player translation switching, and (soon) generated visual aids.",
+    platform: "NEXT.JS · PUSHER",
+    phase: "v5 · Multi-chapter + visuals",
+    done: "John 1–5 authored, image rendering layer wired (kill-switched dark)",
+    next: "Live session + first sample image generation",
+  },
+];
 
 function formatDate(d: string) {
   return new Date(d).toLocaleDateString("en-US", {
@@ -181,7 +194,7 @@ export default function HomePage() {
           <Reveal>
             <div className="grid grid-cols-3 divide-x divide-zinc-800 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 backdrop-blur-sm">
               <StatCell label="Logs" value={posts.length} />
-              <StatCell label="Projects" value="2" accent />
+              <StatCell label="Projects" value="3" accent />
               <StatCell label="Day" value={daysBuilding} />
             </div>
           </Reveal>
@@ -295,61 +308,65 @@ export default function HomePage() {
       {/* ═══ ALSO BUILDING ═══ */}
       <section className="pb-20">
         <Container size="wide">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 p-6 backdrop-blur-sm md:p-8">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-10 -top-10 h-[300px] w-[300px] rounded-full bg-emerald-400/[0.04] blur-3xl"
-              />
-              <div className="relative flex flex-col gap-5 md:flex-row md:items-start md:justify-between md:gap-10">
-                <div className="flex-1">
-                  <Eyebrow tone="emerald" className="mb-4">
-                    Also Building · {SECONDARY_PROJECT.phase}
-                  </Eyebrow>
-                  <div className="mb-2 flex items-center gap-3">
-                    <span className="text-3xl">{SECONDARY_PROJECT.emoji}</span>
-                    <h2 className="text-xl font-bold tracking-tight text-zinc-100 md:text-2xl">
-                      {SECONDARY_PROJECT.name}
-                    </h2>
-                  </div>
-                  <p className="mb-5 max-w-xl text-sm leading-relaxed text-zinc-400 md:text-base">
-                    {SECONDARY_PROJECT.tagline}
-                  </p>
-                  <div className="flex flex-wrap items-center gap-3">
-                    <Badge variant="outline">{SECONDARY_PROJECT.platform}</Badge>
-                    <Link
-                      href="/posts"
-                      className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.15em] text-emerald-400 transition-colors hover:text-emerald-300"
-                    >
-                      Read dev log
-                      <span aria-hidden>→</span>
-                    </Link>
-                  </div>
-                </div>
+          <div className="space-y-4">
+            {SECONDARY_PROJECTS.map((p) => (
+              <Reveal key={p.name}>
+                <div className="relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 p-6 backdrop-blur-sm md:p-8">
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute -right-10 -top-10 h-[300px] w-[300px] rounded-full bg-emerald-400/[0.04] blur-3xl"
+                  />
+                  <div className="relative flex flex-col gap-5 md:flex-row md:items-start md:justify-between md:gap-10">
+                    <div className="flex-1">
+                      <Eyebrow tone="emerald" className="mb-4">
+                        Also Building · {p.phase}
+                      </Eyebrow>
+                      <div className="mb-2 flex items-center gap-3">
+                        <span className="text-3xl">{p.emoji}</span>
+                        <h2 className="text-xl font-bold tracking-tight text-zinc-100 md:text-2xl">
+                          {p.name}
+                        </h2>
+                      </div>
+                      <p className="mb-5 max-w-xl text-sm leading-relaxed text-zinc-400 md:text-base">
+                        {p.tagline}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <Badge variant="outline">{p.platform}</Badge>
+                        <Link
+                          href="/posts"
+                          className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.15em] text-emerald-400 transition-colors hover:text-emerald-300"
+                        >
+                          Read dev log
+                          <span aria-hidden>→</span>
+                        </Link>
+                      </div>
+                    </div>
 
-                <div className="flex flex-col gap-3 font-mono text-xs md:min-w-[280px] md:max-w-sm md:border-l md:border-zinc-800 md:pl-8">
-                  <div>
-                    <div className="mb-1.5 uppercase tracking-[0.2em] text-zinc-500">
-                      Shipped
-                    </div>
-                    <div className="flex gap-2 text-zinc-300">
-                      <span className="text-emerald-400" aria-hidden>✓</span>
-                      <span>{SECONDARY_PROJECT.done}</span>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="mb-1.5 uppercase tracking-[0.2em] text-zinc-500">
-                      Next
-                    </div>
-                    <div className="flex gap-2 text-zinc-300">
-                      <span className="text-yellow-400" aria-hidden>→</span>
-                      <span>{SECONDARY_PROJECT.next}</span>
+                    <div className="flex flex-col gap-3 font-mono text-xs md:min-w-[280px] md:max-w-sm md:border-l md:border-zinc-800 md:pl-8">
+                      <div>
+                        <div className="mb-1.5 uppercase tracking-[0.2em] text-zinc-500">
+                          Shipped
+                        </div>
+                        <div className="flex gap-2 text-zinc-300">
+                          <span className="text-emerald-400" aria-hidden>✓</span>
+                          <span>{p.done}</span>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="mb-1.5 uppercase tracking-[0.2em] text-zinc-500">
+                          Next
+                        </div>
+                        <div className="flex gap-2 text-zinc-300">
+                          <span className="text-yellow-400" aria-hidden>→</span>
+                          <span>{p.next}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </Reveal>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 
