@@ -1,10 +1,10 @@
 ---
-title: "Day 1.1 – Bethesda"
+title: "Day 1.1 – Tableword"
 date: "2026-04-28"
 summary: "v4 (multi-chapter John 1–5) and v5 (visual aids) shipped on a single branch. The image rendering layer ships before any image exists — and that's the architectural point. When `getHeroImage` returns null, `<HeroImage>` returns null, the scene renders without it, and tomorrow the user runs the generation script to fill in."
-tags: ["nextjs", "bethesda", "devlog", "architecture", "kill-switch"]
+tags: ["nextjs", "tableword", "devlog", "architecture", "kill-switch"]
 ---
-Day 1.1 of the bethesda series and tonight's ship was big — v4 (multi-chapter foundation, John 1–5 authored end to end, ~165 verses + four chapters of background cards / quizzes / spotlights / reflection prompts) and v5 (image schema, generation pipeline, rendering primitives, hide-images toggle, kill switch) on a single branch in one PR. The interesting architectural decision wasn't the new chapter authoring or the AVIF/WebP/JPG fallback chain. It was that the image-rendering layer shipped to production tonight even though no images exist yet. 🌑
+Day 1.1 of the Tableword series (still going by `bethesda` at this point — the rebrand is a few days out) and tonight's ship was big — v4 (multi-chapter foundation, John 1–5 authored end to end, ~165 verses + four chapters of background cards / quizzes / spotlights / reflection prompts) and v5 (image schema, generation pipeline, rendering primitives, hide-images toggle, kill switch) on a single branch in one PR. The interesting architectural decision wasn't the new chapter authoring or the AVIF/WebP/JPG fallback chain. It was that the image-rendering layer shipped to production tonight even though no images exist yet. 🌑
 
 ## ✅ What got done today
 

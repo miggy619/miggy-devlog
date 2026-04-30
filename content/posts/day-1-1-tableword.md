@@ -1,10 +1,10 @@
 ---
-title: "Day 1.1 – Bethesda"
+title: "Day 1.1 – Tableword"
 date: "2026-04-28"
 summary: "v4 (multi-chapter John 1–5) and v5 (visual aids) shipped on a single branch. The image rendering layer ships before any image exists — and that's the architectural point. When `getHeroImage` returns null, `<HeroImage>` returns null, the scene renders without it, and tomorrow the user runs the generation script to fill in."
-tags: ["nextjs", "bethesda", "devlog", "architecture", "kill-switch"]
+tags: ["nextjs", "tableword", "devlog", "architecture", "kill-switch"]
 ---
-Day 1.1 of the bethesda series and tonight's ship was big — v4 (multi-chapter foundation, John 1–5 authored end to end, ~165 verses + four chapters of background cards / quizzes / spotlights / reflection prompts) and v5 (image schema, generation pipeline, rendering primitives, hide-images toggle, kill switch) on a single branch in one PR. The interesting architectural decision wasn't the new chapter authoring or the AVIF/WebP/JPG fallback chain. It was that the image-rendering layer shipped to production tonight even though no images exist yet. 🌑
+Day 1.1 of the Tableword series (still going by `bethesda` at this point — the rebrand is a few days out) and tonight's ship was big — v4 (multi-chapter foundation, John 1–5 authored end to end, ~165 verses + four chapters of background cards / quizzes / spotlights / reflection prompts) and v5 (image schema, generation pipeline, rendering primitives, hide-images toggle, kill switch) on a single branch in one PR. The interesting architectural decision wasn't the new chapter authoring or the AVIF/WebP/JPG fallback chain. It was that the image-rendering layer shipped to production tonight even though no images exist yet. 🌑
 
 ## ✅ What got done today
 
@@ -52,3 +52,5 @@ Live test tomorrow night. Eight-scenario dry-run (compliant + adversarial passes
 Then, the v5 image generation step: one sample run (one passage hero + four tradition lenses + the generic fallback) for tone check, then bulk generation across all five chapters if the sample passes. ~75–95 images total.
 
 Five chapters live, image rendering wired but dark. Live in 24 hours. ✦
+
+> **Postscript from Day 3.** The sample run did not pass tone check — Pollinations' Flux output gave the Bethesda paralytic six fingers and a torso that didn't make anatomical sense. v5.0's "ship rendering before assets" still held up architecturally, but the *assets* failed quality. v5.5 replaced the AI-first sourcing with public-domain classical paintings (Verrocchio, Veronese, El Greco, Tanner, Siemiradzki, Murillo) imported from Wikimedia Commons via a separate `import-public-domain.ts` pipeline — same `<HeroImage>` primitive, different supply chain. The kill switch never had to flip. Posted as a footnote here because the lesson is exactly the inverse: a clean degradation contract protects you when assets fail, but it doesn't *replace* the asset-quality conversation. AI was the wrong default for canonical religious art.

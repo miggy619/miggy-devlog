@@ -50,14 +50,14 @@ const SECONDARY_PROJECTS = [
     next: "Sunday batch recording → `caption draft` (Anthropic per platform)",
   },
   {
-    name: "Bethesda",
+    name: "Tableword",
     emoji: "✦",
     tagline:
-      "Live multiplayer Bible study — host walks the room through scripture; players follow on their phones with quizzes, anonymous Q&A, per-player translation switching, and (soon) generated visual aids.",
+      "Live multiplayer Bible study — host walks the room through scripture; players follow on their phones with quizzes, anonymous Q&A, per-player translation switching, classical-art hero images, and patristic commentary across Catholic / Orthodox / Common voices.",
     platform: "NEXT.JS · PUSHER",
-    phase: "v5 · Multi-chapter + visuals",
-    done: "John 1–5 authored, image rendering layer wired (kill-switched dark)",
-    next: "Live session + first sample image generation",
+    phase: "v2 platform · Planning",
+    done: "All 27 NT books + Genesis 1–14 authored, patristic Phase 1 (267 cards), heartbeat resync shipped",
+    next: "v2 platform spec → Tier A Phase A: Supabase auth + profiles + study counts",
   },
 ];
 

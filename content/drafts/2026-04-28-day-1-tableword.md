@@ -1,10 +1,10 @@
 ---
-title: "Day 1 – Bethesda"
+title: "Day 1 – Tableword"
 date: "2026-04-28"
-summary: "Bethesda is a live multiplayer Bible study app I've been building on the side — host walks the room through scripture, players follow on their phones. Today's marathon ship: section navigator, translation switcher, anonymous Q&A. The interesting part is what the inventory script told me about the project's actual constraint."
-tags: ["nextjs", "pusher", "bethesda", "devlog", "bible-study"]
+summary: "Tableword (started life as `bethesda` — a John 5 prototype that kept its codename until the v8 rebrand) is a live multiplayer Bible study app I've been building on the side. Today's marathon shipped section navigation, a three-feature translation switcher, and anonymous Q&A. The interesting part is what the inventory script told me about the project's actual constraint."
+tags: ["nextjs", "pusher", "tableword", "devlog", "bible-study"]
 ---
-Bethesda is a live multiplayer Bible study app I've been building on the side. Host opens a room, players join with a code, host walks the group through scripture scene by scene — quiz rounds, background cards, tradition spotlights, anonymous Q&A — and players follow on their phones in lockstep. Today shipped v3, which sounds like a small version bump but was actually the marathon: section navigation across the whole chapter, full Bible translation switching with three different override scopes, and a brand-new anonymous Q&A scene. The technical decisions were interesting; the story they told me about the project was more interesting. ✦
+Tableword is a live multiplayer Bible study app I've been building on the side. Host opens a room, players join with a code, host walks the group through scripture scene by scene — quiz rounds, background cards, tradition spotlights, anonymous Q&A — and players follow on their phones in lockstep. (Quick naming note: the project started as `bethesda` because the first prototype was John 5 and the pool of Bethesda was the test passage. The user-facing rename to Tableword landed a few days in, after `logos.com` turned out to belong to Faithlife's Logos Bible Software. The repo, the folder, and the production domain are all `tableword` now; the React component that fetches John 5 still says `bethesda` because the *pool* is still the pool.) Today shipped v3, which sounds like a small version bump but was actually the marathon: section navigation across the whole chapter, full Bible translation switching with three different override scopes, and a brand-new anonymous Q&A scene. The technical decisions were interesting; the story they told me about the project was more interesting. ✦
 
 ## ✅ What got done today
 
