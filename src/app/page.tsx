@@ -17,29 +17,38 @@ const TECH = [
 ];
 
 const PROJECT = {
-  name: "Discord Mod Simulator",
+  name: "Server Mod Simulator",
   emoji: "🎮",
-  tagline: "Wave-based survival on Roblox. Social commentary + humor.",
+  tagline:
+    "Wave-based survival on Roblox. Social commentary + humor. Shipped May 3, 2026 — 30-day plan, closed in 14 calendar days. (Renamed from \"Discord Mod Simulator\" during Phase 6 prep to dodge a trademark.)",
   platform: "ROBLOX",
-  phase: "Phase 3 · Launch prep",
+  phase: "🚀 Launched · May 3, 2026",
+  liveUrl:
+    "https://www.roblox.com/share?code=6b575d753764f741a2a25711acdc3a7b",
   milestones: [
-    // Phase 1 — shipped Day 2
+    // Phase 1 — shipped Day 5
     { label: "Project + Rojo setup", done: true, phase: 1 },
     { label: "Core scripts + basic map", done: true, phase: 1 },
     { label: "Enemy spawn + Ban Hammer", done: true, phase: 1 },
     { label: "Wave system + 2nd enemy", done: true, phase: 1 },
     { label: "Currency + first upgrade", done: true, phase: 1 },
     { label: "Win condition + wave counter", done: true, phase: 1 },
-    // Phase 2 — shipped Day 5
+    // Phase 2 — shipped Day 12
     { label: "Hit effects + feedback", done: true, phase: 2 },
     { label: "More moderation tools", done: true, phase: 2 },
-    { label: "Path variation + new enemies", done: true, phase: 2 },
-    { label: "Real UI pass", done: true, phase: 2 },
-    // Phase 3 — launch prep
-    { label: "Game-feel polish pass (shockwaves + shake)", done: true, phase: 3 },
-    { label: "Recording session — 7 clips captured", done: true, phase: 3 },
-    { label: "VO + editing pass", done: false, phase: 3 },
-    { label: "Roblox listing + soft launch", done: false, phase: 3 },
+    { label: "New enemies + game-feel polish", done: true, phase: 2 },
+    { label: "Real UI pass + recording session", done: true, phase: 2 },
+    // Phase 3 — Retention (Days 13-18)
+    { label: "DataStore + schema-versioned saves", done: true, phase: 3 },
+    { label: "Mute Gun rework + combo system", done: true, phase: 3 },
+    { label: "Wave modifiers + XP / levels + restart loop", done: true, phase: 3 },
+    // Phase 4 — Monetization (Days 19-22)
+    { label: "3 gamepasses + 4 dev products + Shop UI", done: true, phase: 4 },
+    // Phase 5 — Polish + viral (Days 23-27)
+    { label: "Themed map + touch controls + meme enemies", done: true, phase: 5 },
+    // Phase 6 — Launch (Days 28-30)
+    { label: "Icon + thumbnail + description + hashtags", done: true, phase: 6 },
+    { label: "Public release on Roblox", done: true, phase: 6 },
   ],
 };
 
@@ -224,7 +233,7 @@ export default function HomePage() {
                 {/* Left: project info */}
                 <div>
                   <Eyebrow pulse tone="yellow" className="mb-5">
-                    Now Building · {PROJECT.phase}
+                    Just Shipped · {PROJECT.phase}
                   </Eyebrow>
 
                   <div className="mb-3 flex items-center gap-3">
@@ -258,9 +267,20 @@ export default function HomePage() {
 
                   <div className="flex flex-wrap items-center gap-3">
                     <Badge variant="outline">{PROJECT.platform}</Badge>
+                    {PROJECT.liveUrl && (
+                      <a
+                        href={PROJECT.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.15em] text-yellow-400 transition-colors hover:text-yellow-300"
+                      >
+                        Play on Roblox
+                        <span aria-hidden className="transition-transform group-hover:translate-x-0.5">↗</span>
+                      </a>
+                    )}
                     <Link
                       href="/posts"
-                      className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.15em] text-yellow-400 transition-colors hover:text-yellow-300"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.15em] text-zinc-300 transition-colors hover:text-yellow-300"
                     >
                       Read dev log
                       <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
@@ -272,7 +292,7 @@ export default function HomePage() {
                 <div>
                   <div className="mb-5 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">
                     <span>Milestones</span>
-                    <span className="text-emerald-400">Phase 3 · Launching</span>
+                    <span className="text-emerald-400">All phases ✓ shipped</span>
                   </div>
                   <ul className="space-y-2.5">
                     {PROJECT.milestones.map((m, i) => {
