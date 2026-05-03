@@ -4,7 +4,7 @@ date: "2026-05-03"
 summary: "30-day Roblox plan, shipped in 14 calendar days. The game is live. Phase 6 launch closed in one push: icon, thumbnail, description in 'ban' language, hashtags picked, the all-ages publishing tier unlocked, public privacy flipped on, soft launch + public posts went live. Also renamed mid-launch from 'Discord Mod Simulator' → 'Server Mod Simulator' to dodge a trademark — caught it before publish, not after."
 tags: ["roblox", "luau", "devlog", "phase-6", "launch", "milestone"]
 ---
-The game shipped. **Server Mod Simulator** is live on Roblox at [roblox.com/share?code=6b575d753764f741a2a25711acdc3a7b](https://www.roblox.com/share?code=6b575d753764f741a2a25711acdc3a7b). 30-day plan, closed in 14 calendar days from project scaffold to public release. Phase 6 (Days 28–30) compressed into one push — icon, thumbnail, description, hashtags, public privacy flip, soft launch, public posts. Project complete. 🚀
+The game shipped. **Server Mod Simulator** is live on Roblox at [roblox.com/games/94039045722660/Server-Mod-Simulator](https://www.roblox.com/games/94039045722660/Server-Mod-Simulator). 30-day plan, closed in 14 calendar days from project scaffold to public release. Phase 6 (Days 28–30) compressed into one push — icon, thumbnail, description, hashtags, public privacy flip, soft launch, public posts. Project complete. 🚀
 
 ## 🏷️ The rename
 

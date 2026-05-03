@@ -24,7 +24,7 @@ const PROJECT = {
   platform: "ROBLOX",
   phase: "🚀 Launched · May 3, 2026",
   liveUrl:
-    "https://www.roblox.com/share?code=6b575d753764f741a2a25711acdc3a7b",
+    "https://www.roblox.com/games/94039045722660/Server-Mod-Simulator",
   milestones: [
     // Phase 1 — shipped Day 5
     { label: "Project + Rojo setup", done: true, phase: 1 },
